@@ -10,10 +10,10 @@
 html, body {
 	width: 100%;
 	height: 100%;
-	
-	background: #eee;
+
+	background: tomato;
 	color: #eee;
-	
+
 	font-family: 'Molengo', Arial, Helvetica, sans-serif;
 }
 
@@ -42,7 +42,7 @@ p {
 #world {
 	-webkit-perspective: 500px;
  	-webkit-perspective-origin: 50% 50%;
-	
+
 	width: 100%;
 	height: 100%;
 }
@@ -50,13 +50,13 @@ p {
 #room {
 	width: 600px;
 	height: 500px;
-	
+
 	position: absolute;
 	left: 50%;
 	top: 45%;
 	margin-left: -300px;
 	margin-top: -250px;
-	
+
 }
 
 #back,
@@ -66,7 +66,7 @@ p {
 #wall-top,
 #wall-bottom {
 	position: absolute;
-	
+
 	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.45) inset;
 	   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.45) inset;
 	     -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.45) inset;
@@ -76,49 +76,60 @@ p {
 #back {
 	width: 600px;
 	height: 500px;
-	
+
 	background: rgba(0,100,120,1);
 	text-align: center;
-	
+
 	-webkit-transform: translateZ(-49px);
 }
 
 #front {
 	width: 600px;
 	height: 500px;
-	
+
 	background: url('../assets/images/clouds.png') no-repeat bottom;
-	
+
 	-webkit-transform: translateZ(50px);
 }
-	
+
+#testtop {
+	width: 200px;
+	height: 200px;
+
+	background: url('../assets/images/totem01.gif') no-repeat bottom;
+
+	-webkit-transform: translateX(150px) translateY(150px)  translateZ(10px);
+
+
+}
+
 #wall-left {
 	height: 500px;
 	width: 100px;
 	left: 0px;
-	
+
 	background: #bbb;
-	
-	-webkit-transform: translateX(-50px) rotate3d(0, 50, 0, 90deg);
+
+	-webkit-transform: translateX(-50px) translateY(-200px) rotate3d(0, 50, 0, 90deg);
 }
 
 #wall-right {
 	height: 500px;
 	width: 100px;
 	right: 0px;
-	
+
 	background: #bbb;
-	
-	-webkit-transform: translateX(50px) rotate3d(0, 50, 0, -90deg);
+
+	-webkit-transform: translateX(50px) translateY(-200px) rotate3d(0, 50, 0, -90deg);
 }
 
 #wall-top {
 	height: 100px;
 	width: 600px;
 	top: 0px;
-	
+
 	background: #999;
-	
+
 	-webkit-transform: translateY(-50px) rotate3d(50, 0, 0, 90deg);
 }
 
@@ -126,9 +137,9 @@ p {
 	height: 100px;
 	width: 600px;
 	bottom: 0px;
-	
+
 	background: #999;
-	
+
 	-webkit-transform: translateY(50px) rotate3d(50, 0, 0, -90deg);
 }
 
@@ -136,14 +147,14 @@ p {
 	position: absolute;
 	width: 600px;
 	height: 100px;
-	
+
 	background: rgba(0,0,0,0.2);
 	border-radius: 8px;
-	
+
 	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
 	   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
 	     -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
 	        box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
-	
+
 	-webkit-transform: translate3d(0, 550px, -10px) rotateX(70deg);
 }
