@@ -1,47 +1,18 @@
-/**
- * Copyright (C) 2011 Hakim El Hattab, http://hakim.se
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-/**
- * This script adjusts the perspective of a CSS 3D transformed
- * box based on device orientation and motion. The box itself,
- * including wall sizes, positions and rotation, is defined
- * entirely in the main.css file and it's only the perspective
- * that is changed via JavaScript.
- *
- * Thanks to Nassim Benghmiss for adding orientation support.
- *
- * @author Hakim El Hattab (http://hakim.se)
- * @version 0.1
- */
 var Holobox = (function(){
 
 	var world = document.getElementById('world'),
 		back = document.getElementById('back'),
 		front = document.getElementById('front'),
 		wallLeft = document.getElementById('wall-left'),
+		// catGif = document.getElementById('catgif'),
 		wallRight = document.getElementById('wall-right'),
 		wallTop = document.getElementById('wall-top'),
 		wallBottom = document.getElementById('wall-bottom'),
 		testTop = document.getElementById('testtop'),
+		peanutButter = document.getElementById('peanutbutter'),
+		controlPanel = document.getElementById('control-panel')
+
+
 
 
 		orientation = 0,
@@ -104,7 +75,7 @@ var Holobox = (function(){
 		world.style.perspectiveOrigin = perspective.cx + '% ' + perspective.cy + '%';
 
 		// Used to control z-indices of our elements, first item == bottom
-		var stack = [ back, wallLeft, wallRight, wallTop, testTop, wallBottom ];
+		var stack = [ back, controlPanel, wallLeft, wallRight, wallTop, peanutButter, testTop,  wallBottom ];
 
 		// If we're looking in from the left, make sure the left wall is
 		// positioned above all other elements
@@ -117,10 +88,11 @@ var Holobox = (function(){
 			stack.push( wallRight );
 		}
 
+
 		// No matter what order, the front-facing cover of the box should
 		// always be placed on top
-		stack.push( front );
 
+		stack.push( front );
 		for( var i = 0, len = stack.length; i < len; i ++ ) {
 			stack[i].style.zIndex = i;
 		}
